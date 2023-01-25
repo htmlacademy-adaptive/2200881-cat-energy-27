@@ -1,0 +1,55 @@
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.page {
+  height: 100%;
+  font-family: "Oswald", "Arial", sans-serif;
+  overflow-x: hidden;
+}
+
+.page__body {
+  margin: 0;
+
+  @media (min-width: @desktop-width) {
+    &--background {
+      background-image: url("../img/background-cat-green-desktop.jpg");
+      background-repeat: no-repeat;
+      background-position: top right;
+      background-size: 50%;
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/background-cat-green-desktop@2x.jpg");
+      }
+    }
+  }
+}
+
+.page-main__title {
+  .main-fonts;
+  font-weight: normal;
+  font-size: 36px;
+  color: @basic-black;
+  position: relative;
+  padding-top: 18px;
+  .wrapper(87.5%);
+
+  @media (min-width: @tablet-width) {
+    .wrapper(82%);
+    font-size: 60px;
+    padding-top: 21px;
+
+    &--catalog {
+      width: 92%;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    .wrapper(1220px);
+    padding-top: 27px;
+  }
+}

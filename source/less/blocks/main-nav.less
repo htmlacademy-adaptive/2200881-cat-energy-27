@@ -1,0 +1,256 @@
+.main-nav {
+  .main-fonts;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: @basic-black;
+  text-align: center;
+}
+
+.main-nav__wrapper {
+  @media (min-width: @tablet-width) {
+    .wrapper (92%);
+    display: flex;
+    justify-content: space-between;
+    padding-top: 26px;
+    padding-bottom: 28px;
+  }
+
+  @media (min-width: @desktop-width) {
+    .wrapper (1220px);
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 29px;
+  }
+}
+
+.main-nav__logo-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: @mobile-width-only) {
+    .wrapper (87.5%);
+  }
+
+  @media (min-width: @tablet-width) {
+    justify-content: flex-start;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-top: 30px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.main-nav__logo {
+  @media (min-width: @tablet-width) {
+    width: 60px;
+    height: 50px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 75px;
+    height: 58px;
+  }
+}
+
+.main-nav__button {
+  width: 18px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  position: relative;
+  cursor: pointer;
+
+  &--opened::after,
+  &--opened::before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background-color: @basic-black;
+    top: 7px;
+    left: -6px;
+  }
+
+  &--opened::after {
+    transform: rotate(-45deg);
+  }
+
+  &--opened::before {
+    transform: rotate(45deg);
+  }
+
+  &--closed::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: @basic-black;
+    top: 7px;
+    left: -6px;
+    box-shadow: 0 9px 0 0 @basic-black, 0 -9px 0 0 @basic-black;
+  }
+
+  @media (min-width: @tablet-width) {
+    display: none;
+  }
+}
+
+// Стили для меню без JS
+.main-nav__button.main-nav__button--no-js {
+  display: none;
+}
+
+.main-nav__logo-box.main-nav__logo-box--no-js {
+  justify-content: center;
+}
+
+.main-nav__list.main-nav__list--no-js {
+  display: flex;
+}
+
+.main-nav__list {
+  .reset-list;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: @tablet-width) {
+    flex-direction: row;
+    align-items: center;
+    font-size: 18px;
+    font-weight: normal;
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-top: 30px;
+  }
+
+  @media (max-width: @mobile-width-only) {
+    &--closed {
+      display: none;
+    }
+
+    &--open {
+      display: flex;
+    }
+  }
+}
+
+.main-nav__item {
+  position: relative;
+
+  @media (max-width: @mobile-width-only) {
+    border-bottom: 1px solid @border-dark-grey;
+
+    &:first-of-type {
+      border-top: 1px solid @border-dark-grey;
+    }
+  }
+
+  @media (min-width: @tablet-width) {
+    padding: 0;
+    margin-left: 34px;
+  }
+}
+
+.main-nav__link {
+  text-decoration: none;
+  color: @basic-black;
+  padding: 24px;
+  padding-top: 22px;
+  display: block;
+
+  @media (min-width: @tablet-width) {
+    font-size: 18px;
+    padding: 11px 0;
+  }
+
+  @media (min-width: @desktop-width) {
+    color: @basic-white;
+    font-size: 20px;
+  }
+
+  &--current {
+    @media (min-width: @tablet-width) {
+      border-bottom: 2px solid @basic-green;
+      padding-bottom: 9px;
+    }
+
+    @media (min-width: @desktop-width) {
+      border-color: @basic-white;
+    }
+  }
+
+  &--green-bottom {
+    @media (min-width: @tablet-width) {
+      border-bottom: 2px solid @basic-green;
+      padding-bottom: 9px;
+    }
+  }
+
+  &:hover {
+    @media (min-width: @tablet-width) {
+      opacity: 0.6;
+      padding-bottom: 9px;
+      border-bottom: 2px solid @basic-black;
+    }
+
+    @media (min-width: @desktop-width) {
+      border-bottom: 2px solid @basic-white;
+    }
+  }
+
+  &--black {
+    @media (min-width: @tablet-width) {
+      &:hover {
+        border-bottom: 2px solid @basic-black;
+      }
+
+      &:active {
+        border: none;
+        opacity: 0.3;
+      }
+    }
+
+    @media (min-width: @desktop-width) {
+      color: black;
+    }
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.main-nav__logo-link {
+  margin-right: -15px;
+
+  @media (min-width: @tablet-width) {
+    margin-right: 8px;
+  }
+}
+
+.main-nav__logo-word {
+  @media (min-width: @tablet-width) {
+    width: 111px;
+    height: 20px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 118px;
+    height: 22px;
+  }
+}

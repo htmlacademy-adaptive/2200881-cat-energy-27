@@ -1,0 +1,106 @@
+.radio-form {
+  @media (max-width: @mobile-width-only) {
+    width: 100%;
+    border-bottom: 1px solid @border-special-grey;
+  }
+}
+
+.radio-form__list {
+  .wrapper (87.5%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 17px;
+  margin-bottom: 10px;
+
+  @media (min-width: @tablet-width) {
+    .wrapper(71%);
+    margin-top: 54px;
+    padding: 15px 40px;
+    border: 1px solid @border-light-grey;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-top: 67px;
+    margin-bottom: 34px;
+    width: auto;
+  }
+}
+
+.radio-form__item {
+  margin-bottom: 5px;
+}
+
+.radio-form__label {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 45px;
+  cursor: pointer;
+  color: @special_dark-grey-2;
+  position: relative;
+}
+
+.radio-form__input + .radio-form__label::before {
+  content: "";
+  position: absolute;
+  background: transparent;
+  width: 30px;
+  height: 30px;
+  border: 1px solid @toggle-border-grey;
+  border-radius: 50%;
+  top: 5px;
+  left: 0;
+
+  @media (min-width: @tablet-width) {
+    width: 40px;
+    height: 40px;
+    top: 7px;
+    left: -15px;
+  }
+}
+
+.radio-form__input:checked + .radio-form__label::before {
+  content: "";
+  position: absolute;
+  background: transparent;
+  width: 30px;
+  height: 30px;
+  border: 1px solid @toggle-border-grey;
+  border-radius: 50%;
+  top: 5px;
+  left: 0;
+
+  @media (min-width: @tablet-width) {
+    width: 40px;
+    height: 40px;
+    top: 7px;
+    left: -15px;
+  }
+}
+
+.radio-form__input:checked + .radio-form__label::after {
+  content: "";
+  position: absolute;
+  background: @basic-green;
+  width: 13.5px;
+  height: 13.5px;
+  border-radius: 50%;
+  top: 14px;
+  left: 9px;
+
+  @media (min-width: @tablet-width) {
+    width: 18px;
+    height: 18px;
+    top: 19px;
+    left: -3px;
+  }
+}
+
+.radio-form__input:not([disabled]):hover + .radio-form__label::before {
+  border-color: @hover-grey;
+}
+
+.radio-form__input[disabled] + .radio-form__label {
+  opacity: 0.3;
+}

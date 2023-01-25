@@ -1,0 +1,35 @@
+.cards__list {
+  .reset-list;
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+
+  @media (min-width: @tablet-width) {
+    .wrapper (92%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 151px;
+    column-gap: 60px;
+    row-gap: 115px;
+  }
+
+  @media (min-width: @desktop-width) {
+    .wrapper(1220px);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 154px;
+    column-gap: 80px;
+    row-gap: 118px;
+  }
+}
+
+.cards__item {
+  padding-bottom: 26px;
+
+  @media (max-width: @mobile-width-only) {
+    border-bottom: 1px solid @border-grey;
+
+    &:first-of-type {
+      border-top: 1px solid @border-grey;
+    }
+  }
+}
